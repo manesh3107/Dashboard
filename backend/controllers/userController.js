@@ -60,6 +60,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { username, password, email } = req.body;
+    console.log(req.body)
 
     if (!email && !username) {
       return res.status(400).send({ message: "enter name or email first" });

@@ -8,13 +8,21 @@ const cors = require("cors");
 require("dotenv").config();
 connectDB();
 
+const allowedOrigins = [
+  "https://dashboard-git-main-manesh-prajapatis-projects.vercel.app/",
+];
+
 app.use(cp());
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 const PORT = process.env.PORT;
