@@ -9,7 +9,7 @@ require("dotenv").config();
 connectDB();
 
 const allowedOrigins = [
-  "https://dashboard-git-main-manesh-prajapatis-projects.vercel.app/",
+  "https://dashboard-manesh-prajapatis-projects.vercel.app/",
 ];
 
 app.use(cp());
