@@ -35,6 +35,7 @@ const Login = () => {
         formData,
         { withCredentials: true }
       );
+      console.log(response.data);
       const { token, userinfo } = response.data;
       setUser(userinfo.usertype);
       Cookies.set("token", token);

@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/register",
+        `${process.env.REACT_APP_BASE_URL}/register`,
         formData
       );
       console.log(response.data); // You can handle the response as needed
