@@ -8,13 +8,13 @@ const cors = require("cors");
 require("dotenv").config();
 connectDB();
 
-const allowedOrigins = [
-  "https://dashboard-manesh-prajapatis-projects.vercel.app/",
-];
+// const allowedOrigins = [
+//   "https://dashboard-manesh-prajapatis-projects.vercel.app/",
+// ];
 
 app.use(cp());
 app.use(cors({
-  origin: [process.env.CLIENT_URL, "http://localhost:3000"],
+  origin: ["https://dashboard-manesh-prajapatis-projects.vercel.app", "http://localhost:3000"],
   credentials: true,
 }));
 app.use(express.json());
